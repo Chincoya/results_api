@@ -1,0 +1,8 @@
+[
+  {"evaluado": "Nom de plume", "id": 2, "kind": "ascending", "result": 5},
+  {"evaluado": "Nom de plume", "id": 2, "kind": "parallel", "result": 3},
+  {"evaluado": "Nom de plume", "id": 3, "kind": "descending", "result": 4},
+  {"evaluado": "Nom de plume", "id": 3, "kind": "auto", "result": 5},
+  {"evaluado": "Nom de plume", "id": 4, "kind": "ascending", "result": 2},
+  {"evaluado": "Nom de plume", "id": 4, "kind": "ascending", "result": 4}
+]
