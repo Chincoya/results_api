@@ -2,8 +2,8 @@ require 'json'
 
 class ExternalApi
   PAGE_SIZE = 10
-  def initialize
-    @db = JSON.parse(File.read("TDB.json")).group_by{|record| record["id"].to_i}
+  def initialize(db_file)
+    @db = JSON.parse(File.read(db_file)).group_by{|record| record["evaluado_id"].to_i}
   end
 
   def fetch_results(employee_id, page = 1)
@@ -17,7 +17,7 @@ class ExternalApi
     return {'page': page, 'results': nil}.to_json if page.negative? || page.zero? || !db.key?(employee_id)
     return {
       'page': page,
-      'results': db.fetch(employee_id, page)&.slice(PAGE_SIZE * (page - 1), PAGE_SIZE),
+      'results': db.fetch(employee_id, nil)&.slice(PAGE_SIZE * (page - 1), PAGE_SIZE),
     }.to_json
   end
 
