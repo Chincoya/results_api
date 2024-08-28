@@ -6,6 +6,10 @@ class ExternalApi
     @db = JSON.parse(File.read(db_file)).group_by{|record| record["evaluado_id"].to_i}
   end
 
+  def fetch_participants
+    return db.keys.to_json
+  end
+
   def fetch_results(employee_id, page = 1)
     # Return the next page of results.  If page == 0, starts from the
     # beginning.  Otherwise, fetches the next 10 records after the last page.
