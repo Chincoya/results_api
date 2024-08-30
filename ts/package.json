@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "build": "npx tsc -p ./tsconfig.json",
+    "run": "node out/app.js"
+  }
+}
